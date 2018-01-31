@@ -1,3 +1,2 @@
-var atlassianOAuth = require("./lib/atlassianOauth");
+var atlassianOAuth = require("./lib/atlassianOauth").atlassianOAuth;
 exports = module.exports = atlassianOAuth;
-exports.atlassianOAuth = atlassianOAuth;
