@@ -1,9 +1,9 @@
-## CW-ATLASSIAN-OAUTH
+## CW-ATLASSIAN-OAUTH1
 
-This module wraps the oauth strategy for atlassian oauth inside the application.
+This module wraps the oauth strategy for atlassian oauth.
 
 Installation
-`npm install --save git+https://github.com/ankurin/cw-atlassian-oauth.git passport`
+`npm install --save git+https://github.com/incture/cw-atlassian-oauth1.git passport`
 
 > This module uses `express-session` if express-session is not used by the applictaion please install `express-session` and configure your application to use `express-session`
 
@@ -30,7 +30,7 @@ Uses:
 
 ```JavaScript
 const passport = require("passport");
-const cwAtlassianOauth = require("cw-atlassian-oauth");
+const cwAtlassianOauth = require("cw-atlassian-oauth1");
 
 cwAtlassianOauth.oauth({
   applicationURL: "http://xyz.atlassian.net",
@@ -46,7 +46,8 @@ router.get(
   "/auth/jira/callback",
   passport.authenticate("oauth"),
   (req, res) => {
-    res.redirect("/");
+      //app logic
+    // res.send(req.user);
   }
 );
 ```
