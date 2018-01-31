@@ -5,16 +5,18 @@ This module wraps the oauth strategy for atlassian oauth.
 Installation
 `npm install --save git+https://github.com/incture/cw-atlassian-oauth1.git passport`
 
-> This module uses `express-session` if express-session is not used by the applictaion please install `express-session` and configure your application to use `express-session`
+> This module uses `express-session` or `cookie-session`. Based on your application requirement install any of the above session storage and configure it for your application.
 
-`npm insatll --save express-session`
+Example using cookie-session
+`npm insatll --save cookie-session`
 
 ```JavaScript
+const session = require("cookie-session");
+
 app.use(
   session({
-    secret: "keyboard cat",
-    resave: false,
-    saveUninitialized: true
+    maxAge: 1 * 24 * 60 * 60 * 1000,
+    keys: ["as3cr3tk3y"]
   })
 );
 ```
